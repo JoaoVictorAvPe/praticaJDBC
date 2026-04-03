@@ -1,0 +1,4 @@
+user=<DB.USERNAME>
+password=<DB.PASSWORD>
+dburl=jdbc:mysql://<DB.ADDRESS>/<DB.DATABASE>
+useSSL=false
