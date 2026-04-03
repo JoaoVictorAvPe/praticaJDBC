@@ -30,6 +30,26 @@ public class DB {
         }
     }
 
+    public static void closeStatement(java.sql.Statement st) {
+        if (st != null) {
+            try {
+                st.close();
+            } catch (SQLException e) {
+                throw new DBException("failed to close statement: " + e.getMessage());
+            }
+        }
+    }
+
+    public static void closeResultSet(java.sql.ResultSet rs) {
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                throw new DBException("failed to close result set: " + e.getMessage());
+            }
+        }
+    }
+
     private static void connect() {
         Properties props = loadProperties();
 
